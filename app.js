@@ -20,10 +20,15 @@ sequelize.initDb()
 app.get('/',(req,res)=>{
     res.json("hello world") 
 })
-require('./source/routes/Inscription')(app)
-require('./source/routes/Connexion')(app)
-require('./source/routes/ModifierProfil')(app)
-require('./source/routes/SuprimerProfil')(app)
+require('./source/routes/register')(app)
+require('./source/routes/login')(app)
+require('./source/routes/updateProfil')(app)
+require('./source/routes/deleteProfil')(app)
+require('./source/routes/allRealEstate')(app)
+require('./source/routes/getRealEstate')(app)
+require('./source/routes/addRealEstate')(app)
+require('./source/routes/updateRealEstate')(app)
+require('./source/routes/deleteRealEstate')(app)
 //End point pour les requette 404
 app.use(((req,res)=>
     {

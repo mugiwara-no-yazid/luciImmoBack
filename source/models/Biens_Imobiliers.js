@@ -1,3 +1,5 @@
+const Medias_Biens = require("./Medias_Biens");
+
 module.exports = (sequelize,DataTypes) =>
 {
     const Biens_Imobiliers = sequelize.define("Biens_Imobiliers",
@@ -77,7 +79,6 @@ module.exports = (sequelize,DataTypes) =>
             }
         },
         {
-            tableName: "Biens_Imobiliers",
             timestamps: true,
             createdAt: 'date_ajout',
             updatedAt: false
@@ -85,34 +86,24 @@ module.exports = (sequelize,DataTypes) =>
 
 
     Biens_Imobiliers.associate = (models) => {
-            Biens_Imobiliers.belongsTo(models.Utilisateurs, {
+            Biens_Imobiliers.belongsTo(models.User, {
                 foreignKey: "id_proprietaire",
-                as: "proprietaire"
-            });
-        };
-    Biens_Imobiliers.associate = (models) => {
-        Biens_Imobiliers.hasMany(models.Medias_Biens, {
-            foreignKey: "id_image",
-            as: "image_bien"
+            });        
+        Biens_Imobiliers.hasMany(models.Media, {
+            foreignKey: "id_bien",
+            as: "photos"
         });
-    };
-    Biens_Imobiliers.associate = (models) => {
-        Biens_Imobiliers.hasMany(models.Commentaires, {
-            foreignKey: "id_commentaire",
-            as: "commentaire"
+    
+        Biens_Imobiliers.hasMany(models.Commentaire, {
+            foreignKey: "id_bien",
         });
-    };
-
-    Biens_Imobiliers.associate = (models) => {
-        Biens_Imobiliers.hasMany(models.Paiements, {
-            foreignKey: "id_paiement",
-            as: "paiement"
+    
+        Biens_Imobiliers.hasMany(models.Paiement, {
+            foreignKey: "id_bien",
         });
-    }
-    Biens_Imobiliers.associate = (models) => {
-        Biens_Imobiliers.hasMany(models.Favoris, {
-            foreignKey: "id_favori",
-            as: "favoris"
+    
+        Biens_Imobiliers.hasMany(models.Favori, {
+            foreignKey: "id_bien",
         });
     }
     return Biens_Imobiliers;

@@ -1,6 +1,8 @@
-module.exports = (sequilize, DataTypes) =>
+const Biens_Imobiliers = require("./Biens_Imobiliers");
+
+module.exports = (sequelize, DataTypes) =>
 {
-    const Medias_Biens = sequilize.define("Medias_Biens",
+    const Medias_Biens = sequelize.define("Medias_Biens",
         {
             id_image :{
                 type : DataTypes.INTEGER,
@@ -31,16 +33,14 @@ module.exports = (sequilize, DataTypes) =>
             }
         },
         {
-            tableName: "Medias_Biens",
             createdAt: false,
             updatedAt: false
         }
     )
     Medias_Biens.associate = (models) => {
-            Biens_Imobiliers.belongsTo(models.Biens_Imobiliers, {
-                foreignKey: "id_bien",
-                as: "biens"
-            });
-        };
+        Medias_Biens.belongsTo(models.Bien, {
+            foreignKey: "id_bien",   as: "bien"
+        });
+    };
     return Medias_Biens;
 }

@@ -20,14 +20,14 @@ module.exports=(app)=>
             })
             .catch(e=>
                 {
-                    const message = 'L\'utilisateur n\'as pas pu être supprimer. Veuillez reesayer plus tard...'
+                    const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
                     res.status(500).json({ message, data: e,success : false})
                 }
             )
         })
         .catch(e=>
         {
-            const message = 'L\'utilisateur n\'as pas pu être supprimer. Veuillez reesayer plus tard...'
+            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
             res.status(500).json({ message, data: e,success : false})
         }
         )

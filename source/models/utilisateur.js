@@ -54,29 +54,17 @@ module.exports =(sequelize, DataTypes) =>
   })
 
   Utilisateurs.associate = (models) => {
-        Utilisateurs.hasMany(models.Biens_Imobiliers, {
-            foreignKey: "id_proprietaire",
-            as: "biens"
+        Utilisateurs.hasMany(models.Bien, {
+            foreignKey: "id_utilisateur"
         });
-    };
-    
-    Utilisateurs.associate = (models) => {
-        Utilisateurs.hasMany(models.Commentaires, {
-            foreignKey: "id_commentaire",
-            as: "commentaire"
+        Utilisateurs.hasMany(models.Commentaire, {
+            foreignKey: "id_commentaire"
         });
-    }
-
-    Utilisateurs.associate = (models) => {
-        Utilisateurs.hasMany(models.Paiements, {
-            foreignKey: "id_paiement",
-            as: "paiement"
+        Utilisateurs.hasMany(models.Paiement, {
+            foreignKey: "id_paiement"
         });
-    }
-    Utilisateurs.associate = (models) => {
-        Utilisateurs.hasMany(models.Favoris, {
-            foreignKey: "id_favori",
-            as: "favoris"
+        Utilisateurs.hasMany(models.Favori, {
+            foreignKey: "id_favori"
         });
     }
     return Utilisateurs;

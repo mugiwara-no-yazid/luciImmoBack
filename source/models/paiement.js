@@ -76,15 +76,12 @@ module.exports = (sequilize,DataTypes)=>
     )
 
     Paiements.associate = (models) => {
-            Paiements.belongsTo(models.Utilisateurs, {
+            Paiements.belongsTo(models.User, {
                 foreignKey: "id_utilisateur",
-                as: "proprietaire"
             });
-        };
-    Paiements.associate = (models) => {
-            Paiements.belongsTo(models.Biens_Imobiliers, {
+       
+            Paiements.belongsTo(models.Bien, {
                 foreignKey: "id_bien",
-                as: "biens"
             });
         };
 

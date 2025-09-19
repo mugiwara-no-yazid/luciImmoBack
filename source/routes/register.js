@@ -31,7 +31,7 @@ module.exports=async (app)=> {
             })
         })
         .catch(err=>{
-          const message = "Une erreur est survenu veuillez reesayer..."
+          const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
           res.json({message,data:err,success:false})
         })
     })

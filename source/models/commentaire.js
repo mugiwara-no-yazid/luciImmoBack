@@ -47,15 +47,12 @@ module.exports = (sequilize,DataTypes)=>
     )
 
     Commentaires.associate = (models) => {
-            Commentaires.belongsTo(models.Utilisateurs, {
+            Commentaires.belongsTo(models.User, {
                 foreignKey: "id_utilisateur",
-                as: "proprietaire"
             });
-        };
-    Commentaires.associate = (models) => {
-            Commentaires.belongsTo(models.Biens_Imobiliers, {
+        
+            Commentaires.belongsTo(models.Bien, {
                 foreignKey: "id_bien",
-                as: "biens"
             });
         };
     

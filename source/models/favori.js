@@ -40,15 +40,11 @@ const Favoris =  sequilize.define( "Favoris",
     }
 )
     Favoris.associate = (models) => {
-            Favoris.belongsTo(models.Utilisateurs, {
+            Favoris.belongsTo(models.User, {
                 foreignKey: "id_utilisateur",
-                as: "proprietaire"
             });
-        };
-    Favoris.associate = (models) => {
-            Favoris.belongsTo(models.Biens_Imobiliers, {
+            Favoris.belongsTo(models.Bien, {
                 foreignKey: "id_bien",
-                as: "biens"
             });
         };
 

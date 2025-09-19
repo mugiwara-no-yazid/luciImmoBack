@@ -29,7 +29,7 @@ module.exports=(app)=>
                 {
                   return  res.status(400).json({message :e.message, data : e,success : false}) 
                 } 
-              const message = 'Une erreur est survenu. Veuillez reesayer plus tard...'
+              const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
               res.status(500).json({ message, data: e,success : false})
             })
     })
