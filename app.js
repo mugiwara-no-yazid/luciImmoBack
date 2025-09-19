@@ -29,6 +29,15 @@ require('./source/routes/getRealEstate')(app)
 require('./source/routes/addRealEstate')(app)
 require('./source/routes/updateRealEstate')(app)
 require('./source/routes/deleteRealEstate')(app)
+require('./source/routes/addImages')(app)
+require('./source/routes/deleteImages')(app)
+require('./source/routes/getComments')(app)
+require('./source/routes/addComments')(app)
+require('./source/routes/deleteComment')(app)
+require('./source/routes/addFavoris')(app)
+require('./source/routes/deleteFavoris')(app)
+require('./source/routes/getFavoris')(app)
+
 //End point pour les requette 404
 app.use(((req,res)=>
     {

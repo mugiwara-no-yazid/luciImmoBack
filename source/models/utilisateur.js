@@ -46,6 +46,18 @@ module.exports =(sequelize, DataTypes) =>
                     msg : `Le role ne peut etre que "locataire" ou "proprietaire"`
                 }
             }
+        },
+        etat :
+        {
+            type : DataTypes.ENUM('actif','suspendu','bannis'),
+            allowNull : false,
+            validate :
+            {
+                isIn : {
+                    args : [['actif','suspendu','bannis']],
+                    msg : `Le role ne peut etre que "locataire" ou "proprietaire"`
+                }
+            }
         } 
     },{
     timestamps: true,

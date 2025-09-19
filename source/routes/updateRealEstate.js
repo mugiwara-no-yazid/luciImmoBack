@@ -13,7 +13,7 @@ module.exports=(app)=>
                             if(!bien)
                             {
                                 const message = "Le bien n'existe pas"
-                                res.status(404).json({message,success : false})
+                                return res.status(404).json({message,success : false})
                             }
                             const message = "Les informations du bien ont été modifier"
                             res.json({message,data:bien})

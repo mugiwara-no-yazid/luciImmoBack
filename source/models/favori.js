@@ -6,7 +6,7 @@ const Favoris =  sequilize.define( "Favoris",
                 primaryKey : true,
                 autoIncrement : true
             },
-        utilisateur:
+        id_utilisateur:
             {
                 type : DataTypes.INTEGER,
                 allowNull : false,

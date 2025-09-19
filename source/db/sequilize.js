@@ -38,7 +38,8 @@ const initDb = () => {
 	 "mot_de_passe" : "Pikachu",
 	 "telephone" : "0007050604",
 	"photo_profil" : null,
-	"role" : "locataire"
+	"role" : "locataire",
+  "etat" : "actif",
   },)
   await Bien.create({
           "id_proprietaire" :1,
