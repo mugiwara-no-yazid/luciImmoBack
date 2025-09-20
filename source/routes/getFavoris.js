@@ -14,7 +14,7 @@ module.exports=(app)=>{
             })
             .catch(e=>{
                 const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
-                res.status(500).json({message,e})
+      res.status(500).json({message,e,success:false})
             })
         })
     }

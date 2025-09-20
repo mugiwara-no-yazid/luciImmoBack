@@ -55,7 +55,7 @@ module.exports =(sequelize, DataTypes) =>
             {
                 isIn : {
                     args : [['actif','suspendu','bannis']],
-                    msg : `Le role ne peut etre que "locataire" ou "proprietaire"`
+                    msg : `L'etat de l'utilisateur ne peut etre que "actif", "suspendu" ou "bannis"`
                 }
             }
         } 

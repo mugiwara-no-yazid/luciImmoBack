@@ -37,7 +37,8 @@ require('./source/routes/deleteComment')(app)
 require('./source/routes/addFavoris')(app)
 require('./source/routes/deleteFavoris')(app)
 require('./source/routes/getFavoris')(app)
-
+require('./source/routes/getFullUsers')(app)
+require('./source/routes/changeUserState')(app)
 //End point pour les requette 404
 app.use(((req,res)=>
     {
