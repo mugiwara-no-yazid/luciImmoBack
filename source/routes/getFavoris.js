@@ -13,7 +13,7 @@ module.exports=(app)=>{
                 res.json({message,success:true,data:fav})
             })
             .catch(e=>{
-                const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
+                const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."
       res.status(500).json({message,e,success:false})
             })
         })

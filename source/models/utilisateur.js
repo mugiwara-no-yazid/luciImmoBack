@@ -47,6 +47,13 @@ module.exports =(sequelize, DataTypes) =>
                 }
             }
         },
+        code_verification :
+        {
+            type : DataTypes.STRING,
+            allowNull : false,
+            unique:{msg : "Cet code est deja utiliser"}
+        }
+        ,
         etat :
         {
             type : DataTypes.ENUM('actif','suspendu','bannis'),

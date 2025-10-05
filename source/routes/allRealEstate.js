@@ -16,13 +16,13 @@ module.exports=(app)=>{
                if(bien.length == 0)
                {
                 const message ="Il n'y a aucun bien enregistré sur le site"
-                return res.json({message,success:false,data:bien})
+                return res.json({message,success:true,data:bien})
                }
                const message = "La liste des biens enregistré a bien été envoyer"
                 res.json({message,success:true,data: bien})
         })
         .catch(e=>{
-            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
+            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."
             res.status(500).json({message,e,success:false})
         })
                 

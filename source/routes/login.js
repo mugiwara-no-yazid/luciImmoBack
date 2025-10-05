@@ -11,6 +11,7 @@ module.exports=(app)=>{
             }}
         )
         .then(user=>{
+            
             if(!user)
             {
                 const message ="Les identifiants entré sont incorecte"
@@ -29,7 +30,7 @@ module.exports=(app)=>{
             })
         })
         .catch(e=>{
-            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
+            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."
             res.status(500).json({message,e,success:false}) 
         })
     })

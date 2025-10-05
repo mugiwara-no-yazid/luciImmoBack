@@ -31,27 +31,7 @@ Object.keys(models).forEach(modelName=>{
   }
 })
 const initDb = () => {
-  return sequelize.sync({force:true}).then(async _ => {
-    await User.create({
-	 "nom" : "Pikachu",
-	 "email": "az@e.com",
-	 "mot_de_passe" : "Pikachu",
-	 "telephone" : "0007050604",
-	"photo_profil" : null,
-	"role" : "locataire",
-  "etat" : "actif",
-  },)
-  await Bien.create({
-          "id_proprietaire" :1,
-          "titre": "terrains",
-          "description" : "une parcelle a vendre",
-          "type_bien":"appartement",
-          "adresse":"test",
-          "ville":"test",
-          "statut":"disponible",
-          "prix":"test",
-          "surface":"test",
-          })
+  return sequelize.sync(/*{force :true}*/).then(async _ => { 
     console.log('La base de donnée est prête !')
   }).catch(e=>console.error("La base de donnée n'as pas demarrer",e))
 }

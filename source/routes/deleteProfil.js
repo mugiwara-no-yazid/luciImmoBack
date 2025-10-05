@@ -20,14 +20,14 @@ module.exports=(app)=>
             })
             .catch(e=>
                 {
-                    const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
+                    const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."
                     res.status(500).json({ message, data: e,success : false})
                 }
             )
         })
         .catch(e=>
         {
-            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instant..."
+            const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."
             res.status(500).json({ message, data: e,success : false})
         }
         )

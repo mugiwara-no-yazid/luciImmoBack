@@ -5,7 +5,7 @@ const cors = require('cors')
 
 
 
-const port = 3000;
+const port = 2000;
 const app = express();
 app.use(bodyParser.json())
 .use(cors(
@@ -39,6 +39,8 @@ require('./source/routes/deleteFavoris')(app)
 require('./source/routes/getFavoris')(app)
 require('./source/routes/getFullUsers')(app)
 require('./source/routes/changeUserState')(app)
+require('./source/routes/confirmation')(app)
+require('./source/routes/statitique.js')(app)
 //End point pour les requette 404
 app.use(((req,res)=>
     {

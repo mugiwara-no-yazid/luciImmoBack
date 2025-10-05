@@ -81,7 +81,7 @@ module.exports = (sequelize,DataTypes) =>
         {
             timestamps: true,
             createdAt: 'date_ajout',
-            updatedAt: false
+            updatedAt: true
         })
 
 
