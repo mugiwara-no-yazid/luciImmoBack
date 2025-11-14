@@ -5,6 +5,7 @@ const MediaModel = require('../models/Medias_Biens.js')
 const CommentaireModel = require('../models/commentaire.js')
 const PaiementModel =  require('../models/paiement.js')
 const FavoriModel =  require('../models/favori.js')
+const NoteModel = require('../models/notes.js')
 
 const sequelize = new Sequelize('immobilier', 'root', '', {
   host: 'localhost',
@@ -22,7 +23,8 @@ const Media = MediaModel (sequelize,DataTypes)
 const Commentaire = CommentaireModel(sequelize,DataTypes)
 const Paiement = PaiementModel(sequelize,DataTypes)
 const Favori = FavoriModel(sequelize,DataTypes)
-const models = {User,Bien,Media,Commentaire,Paiement,Favori}
+const Note = NoteModel(sequelize,DataTypes)
+const models = {User,Bien,Media,Commentaire,Paiement,Favori,Note}
 
 Object.keys(models).forEach(modelName=>{
   if(models[modelName].associate)
@@ -35,7 +37,7 @@ const initDb = () => {
     console.log('La base de donnée est prête !')
   }).catch(e=>console.error("La base de donnée n'as pas demarrer",e))
 }
-  
+ 
 module.exports = { 
-  initDb,User,Bien,Media,Commentaire,Paiement,Favori
+  initDb,User,Bien,Media,Commentaire,Paiement,Favori,Note
 }

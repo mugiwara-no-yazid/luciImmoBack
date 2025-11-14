@@ -5,6 +5,11 @@ module.exports= (app)=>{
     app.post('/api/biens',(req,res)=>{
       User.findByPk(req.body.id_proprietaire)
       .then(user=>{
+        if(!user)
+            {
+                const message ="Cet utilisateur n'existe pas"
+                return res.status(404).json({message, success : false})
+            }
         if (user.role != "proprietaire")
         {
           return res.status(401).json({message :"Vous n'etes pas autoriser a effectuer cette action", success : false})  

@@ -15,7 +15,9 @@ module.exports =(app)=>{
             const maisonLouees =await Bien.count({where : {statut :"occupé"}})
             const maisonDispo =await Bien.count({where : {statut :"disponible"}})
             const croissanceAnuelle = lastYearCount==0? 100 : ((thisYearCount-lastYearCount)/lastYearCount*100).toFixed(2)
-            res.json({message : "les statistiques du sites ont été envoyé", data:{maisonLouees,maisonDispo,croissanceAnuelle},success:true})
+            const maisonPremium = await Bien.findAll({limit : 5})
+            
+            res.json({message : "les statistiques du sites et les biens premiums ont été envoyé", data:{maisonLouees,maisonDispo,croissanceAnuelle,maisonPremium},success:true})
         
         } catch (e) {
             const message = "Le serveur est indisponible pour le moment. Veuillez reesayer dans quelque instants..."

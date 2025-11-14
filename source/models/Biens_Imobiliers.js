@@ -1,5 +1,3 @@
-const Medias_Biens = require("./Medias_Biens");
-
 module.exports = (sequelize,DataTypes) =>
 {
     const Biens_Imobiliers = sequelize.define("Biens_Imobiliers",
@@ -51,6 +49,11 @@ module.exports = (sequelize,DataTypes) =>
             {
                 type: DataTypes.STRING,
                 allowNull : false,
+            },
+            note:{
+                type: DataTypes.FLOAT,
+                allowNull: false,
+                defaultValue : 0.0
             },
             statut :
             {
